@@ -6,7 +6,7 @@ module.exports = {
     errorMatch: [ '\\*\\*\\s{1}\\((?<errorType>[a-zA-Z]+)\\)\\s{1}(?<file>[\\/0-9a-zA-Z\\\\._-]+).*\\s{1}starting at line\\s{1}(?<line>\\d+)',
                   '\\*\\*\\s{1}\\((?<errorType>[a-zA-Z]+)\\)\\s{1}(?<file>[\\/0-9a-zA-Z\\\\._-]+):(?<line>\\d+)',
                   '(?<file>[\\/0-9a-zA-Z\\\\._-]+):(?<line>\\d+):\\s{1}warning:\\s{1}(?<warningReason>.*)' ],
-    // keymap: ''
+    keymap: 'ctrl-c ^c a b',
     targets: {
       mix_test: {
         name: 'mix-test',
@@ -14,14 +14,14 @@ module.exports = {
         args: [ 'test' ],
         sh: false,
         errorMatch: [ '(?<file>[\\/0-9a-zA-Z\\\\._-]+):(?<line>\\d+)' ],
-        // keymap: ''
+        keymap: 'ctrl-c ^c a t'
       },
       mix_clean: {
         name: 'mix-clean',
         cmd: "mix",
         args: [ 'clean' ],
         sh: false,
-        // keymap: ''
+        keymap: 'ctrl-c ^c a c'
       },
       mix_dialyzer: {
         name: 'mix-dialyzer',
@@ -29,7 +29,7 @@ module.exports = {
         args: [ 'dialyzer', '--fullpath' ],
         sh: false,
         errorMatch: [ '(?<file>[\\/0-9a-zA-Z\\\\._-]+):(?<line>\\d+):\\s{1}(?<info>.*)' ],
-        // keymap: ''
+        keymap: 'ctrl-c ^c a d'
       }
     }
 };
